@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-06_15-16-45",
+            "content": "@@ -366,18 +366,16 @@\n s.getTam\n-()\n )%0A      \n",
+            "lines": "17"
+        },
+        {
+            "label": "2025-10-06_15-17-42",
+            "content": "@@ -344,10 +344,10 @@\n Tam(\n-19\n+25\n )%0Apr\n",
+            "lines": "17"
+        },
+        {
+            "label": "2025-10-06_15-17-54",
+            "content": "@@ -305,281 +305,75 @@\n or%0A%0A\n-def main():%0A    chinela = Chinela()%0A%0A    while True:%0A        line = input(%22Qual o tamanho da sua chinela?%22)%0A        print(%22$%22 + line)%0A        args: list%5Bstr%5D = line%0A        %0A        if args%5B0%5D == %22init%22:%0A            valor = args%5B1%5D%0A            chinela.setTam(valor)%0A%0A%0Amain(\n+havaianas = Chinela()%0Ahavaianas.setTam(19)%0Aprint(havaianas.getTam()\n )%0A  \n",
+            "lines": "17"
+        },
+        {
+            "label": "2025-10-06_15-26-02",
+            "content": "@@ -375,16 +375,48 @@\n = input(\n+%22Qual o tamanho da sua chinela?%22\n )%0A      \n",
+            "lines": "28"
+        },
+        {
+            "label": "2025-10-06_15-26-19",
+            "content": "@@ -536,16 +536,17 @@\n valor)%0A%0A\n+%0A\n main()%0A \n",
+            "lines": "28"
+        },
+        {
+            "label": "2025-10-06_15-26-35",
+            "content": "class Chinela:\n    def __init__(self):\n        self.__tamanho = 0\n\n    def getTam(self):\n        return self.__tamanho\n    \n    def setTam(self, valor: int):\n        if valor < 20 or valor > 50 and valor % 2 != 0:\n            print(\"fail: tamanho invalido\")\n        else:\n            self.__tamanho = valor\n\ndef main():\n    chinela = Chinela()\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args: list[str] = line\n        \n        if args[0] == \"init\":\n            valor = args[1]\n            chinela.setTam(valor)\n\nmain()\n            ",
+            "lines": "27"
+        }
+    ]
+}
