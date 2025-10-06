@@ -27,8 +27,28 @@
         },
         {
             "label": "2025-10-06_15-26-35",
-            "content": "class Chinela:\n    def __init__(self):\n        self.__tamanho = 0\n\n    def getTam(self):\n        return self.__tamanho\n    \n    def setTam(self, valor: int):\n        if valor < 20 or valor > 50 and valor % 2 != 0:\n            print(\"fail: tamanho invalido\")\n        else:\n            self.__tamanho = valor\n\ndef main():\n    chinela = Chinela()\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args: list[str] = line\n        \n        if args[0] == \"init\":\n            valor = args[1]\n            chinela.setTam(valor)\n\nmain()\n            ",
+            "content": "@@ -187,18 +187,19 @@\n or %3E 50 \n-or\n+and\n  valor %25\n@@ -419,82 +419,35 @@\n args\n- = line.split(%22 %22)%0A        %0A        if args%5B0%5D == %22end%22:%0A            break\n+: list%5Bstr%5D = line%0A        \n %0A   \n@@ -451,18 +451,16 @@\n         \n-el\n if args%5B\n@@ -497,20 +497,15 @@\n r = \n-int(\n args%5B1%5D\n-)\n %0A   \n",
             "lines": "27"
+        },
+        {
+            "label": "2025-10-06_17-10-24",
+            "content": "@@ -589,20 +589,16 @@\n valor)%0A%0A\n-    \n main()%0A \n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-10-06_17-11-12",
+            "content": "@@ -592,68 +592,13 @@\n or)%0A\n+%0A\n     \n-    elif args%5B0%5D == %22show%22:%0A            print(chinela)%0A%0A\n main\n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-10-06_17-12-48",
+            "content": "@@ -304,150 +304,8 @@\n or%0A%0A\n-    def show(self) -%3E None:%0A        print(self)%0A    %0A    def __str__(self): %0A        return (f%22O tamanho da minha chinela %C3%A9: %7Bself.getTam%7D%22)%0A%0A\n def \n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-10-06_17-15-24",
+            "content": "class Chinela:\n    def __init__(self):\n        self.__tamanho = 0\n\n    def getTam(self):\n        return self.__tamanho\n    \n    def setTam(self, valor: int):\n        if valor < 20 or valor > 50 or valor % 2 != 0:\n            print(\"fail: tamanho invalido\")\n        else:\n            self.__tamanho = valor\n\n    def show(self) -> None:\n        print(self)\n    \n    def __str__(self): \n        return (f\"O tamanho da minha chinela \u00e9: {self.getTam}\")\n\ndef main():\n    chinela = Chinela()\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n        \n        if args[0] == \"end\":\n            break\n        elif args[0] == \"init\":\n            valor = int(args[1])\n            chinela.setTam(valor)\n        elif args[0] == \"show\":\n            print(chinela)\n\nmain()\n            ",
+            "lines": "37"
         }
     ]
 }
