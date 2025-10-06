@@ -39,3 +39,7 @@
 2025-10-06 17:15:24, EXEC, v:1, k:poo@chinela, mode:FREE, size:37
 2025-10-06 17:16:56, MOVE, v:1, k:poo@chinela, mode:BACK
 2025-10-06 17:18:47, SELF, v:1, k:poo@chinela, rate:100, iagen:_, guide:_, alone:10, study:30
+2025-10-06 17:29:27, MOVE, v:1, k:poo@camisa, mode:DOWN
+2025-10-06 17:41:42, MOVE, v:1, k:poo@camisa, mode:PICK
+2025-10-06 17:41:43, EXEC, v:1, k:poo@camisa, mode:FREE, size:17
+2025-10-06 18:16:24, MOVE, v:1, k:poo@camisa, mode:BACK

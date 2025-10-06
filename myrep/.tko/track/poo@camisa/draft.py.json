@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-06_17-41-43",
+            "content": "class Blusa:\n    def __init__(self):\n        self.__tamanho: str \n\n    def getTam(self):\n        return self.__tamanho\n    \n    def setTam(self, numeracao):\n        if numeracao != \"PP\" or \"P\" or \"M\" or \"G\" or \"GG\" or \"XG\":\n            print(\"numera\u00e7\u00e3o n\u00e3o encontrada, tamanhos dispon\u00edveis: PP, P, M, G, GG e XG\")\n        else:\n            self.__tamanho = numeracao \n\n\nblusa = Blusa()\nblusa.setTam(\"M\")\nprint(blusa)",
+            "lines": "17"
+        }
+    ]
+}
