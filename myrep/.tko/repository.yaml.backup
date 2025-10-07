@@ -8,7 +8,7 @@ sources:
 - database: poo
   link: https://github.com/qxcodepoo/arcade/blob/master/Readme.md
   cache_path: C:\Users\lorra\Documents\poo_tarefas\poo-dd-ab-bloco-b-vieiralorrana\myrep\.tko\cache\poo.md
-  cache_timestamp: '2025-10-06 17:01:45'
+  cache_timestamp: '2025-10-06 22:51:49'
   filters:
   - acesso
   - simples
@@ -17,6 +17,7 @@ expanded:
 - poo@bloco_b-modificadores-de-acesso
 tasks:
   poo@chinela: '{rate:100, iagen:_, guide:_, alone:10, study:30}'
+  poo@camisa: '{rate:100, guide:_, alone:10, study:30}'
 flags:
   quests: 0
   tracks: 0

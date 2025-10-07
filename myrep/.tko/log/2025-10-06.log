@@ -43,3 +43,10 @@
 2025-10-06 17:41:42, MOVE, v:1, k:poo@camisa, mode:PICK
 2025-10-06 17:41:43, EXEC, v:1, k:poo@camisa, mode:FREE, size:17
 2025-10-06 18:16:24, MOVE, v:1, k:poo@camisa, mode:BACK
+2025-10-06 22:51:52, MOVE, v:1, k:poo@camisa, mode:PICK
+2025-10-06 22:51:54, EXEC, v:1, k:poo@camisa, mode:LOCK, rate:0, size:39
+2025-10-06 22:52:12, MOVE, v:1, k:poo@camisa, mode:BACK
+2025-10-06 22:52:15, MOVE, v:1, k:poo@camisa, mode:PICK
+2025-10-06 22:52:16, EXEC, v:1, k:poo@camisa, mode:FREE, size:37
+2025-10-06 22:53:08, MOVE, v:1, k:poo@camisa, mode:BACK
+2025-10-06 22:53:45, SELF, v:1, k:poo@camisa, rate:100, guide:_, alone:10, study:30

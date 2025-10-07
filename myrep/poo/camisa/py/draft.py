@@ -12,7 +12,26 @@ class Blusa:
         else:
             self.__tamanho = numeracao
 
+    def show(self) -> None:
+        print(self)
+    
+    def __str__(self):
+        return (f"minha blusa é {self.getTam()}")
 
-camiseta = Blusa() 
-camiseta.setTam("C") 
-print(camiseta.getTam())
+def main():
+    blusa = Blusa()
+
+    while True:
+        line = input()
+        print("$" + line)
+        args = line.split(" ")
+
+        if args[0] == "end":
+            break
+        elif args[0] == "init":
+            numeracao = args[1]
+            blusa.setTam(numeracao)
+        elif args[0] == "show":
+            print(blusa)
+
+main()
