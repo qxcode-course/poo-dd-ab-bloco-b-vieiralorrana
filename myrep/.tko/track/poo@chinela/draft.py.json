@@ -47,7 +47,12 @@
         },
         {
             "label": "2025-10-06_17-15-24",
-            "content": "class Chinela:\n    def __init__(self):\n        self.__tamanho = 0\n\n    def getTam(self):\n        return self.__tamanho\n    \n    def setTam(self, valor: int):\n        if valor < 20 or valor > 50 or valor % 2 != 0:\n            print(\"fail: tamanho invalido\")\n        else:\n            self.__tamanho = valor\n\n    def show(self) -> None:\n        print(self)\n    \n    def __str__(self): \n        return (f\"O tamanho da minha chinela \u00e9: {self.getTam}\")\n\ndef main():\n    chinela = Chinela()\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n        \n        if args[0] == \"end\":\n            break\n        elif args[0] == \"init\":\n            valor = int(args[1])\n            chinela.setTam(valor)\n        elif args[0] == \"show\":\n            print(chinela)\n\nmain()\n            ",
+            "content": "@@ -437,18 +437,16 @@\n f.getTam\n-()\n %7D%22)%0A%0Adef\n",
+            "lines": "37"
+        },
+        {
+            "label": "2025-10-07_10-17-13",
+            "content": "class Chinela:\n    def __init__(self):\n        self.__tamanho = 0\n\n    def getTam(self):\n        return self.__tamanho\n    \n    def setTam(self, valor: int):\n        if valor < 20 or valor > 50 or valor % 2 != 0:\n            print(\"fail: tamanho invalido\")\n        else:\n            self.__tamanho = valor\n\n    def show(self) -> None:\n        print(self)\n    \n    def __str__(self): \n        return (f\"O tamanho da minha chinela \u00e9: {self.getTam()}\")\n\ndef main():\n    chinela = Chinela()\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n        \n        if args[0] == \"end\":\n            break\n        elif args[0] == \"init\":\n            valor = int(args[1])\n            chinela.setTam(valor)\n        elif args[0] == \"show\":\n            print(chinela)\n\nmain()\n            ",
             "lines": "37"
         }
     ]

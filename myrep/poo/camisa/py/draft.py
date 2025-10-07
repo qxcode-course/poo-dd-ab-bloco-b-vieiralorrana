@@ -22,6 +22,7 @@ def main():
     blusa = Blusa()
 
     while True:
+        print("Qual o tamanho da sua blusa?")
         line = input()
         print("$" + line)
         args = line.split(" ")
