@@ -21,13 +21,13 @@ class Watch:
 
     def setMinuto(self, valor: int):
         if valor < 0 or valor > 59:
-            print("fail: minuto inválido") 
+            print("fail: minuto invalido") 
         else:
             self.__minuto = valor
 
     def setSegundo(self, valor: int):
         if valor < 0 or valor > 59:
-            print("fail: segundo inválido")
+            print("fail: segundo invalido")
         else:
             self.__segundo = valor 
 
@@ -35,22 +35,18 @@ class Watch:
         print(self)
 
     def __str__(self):
-        return (f"{self.getHora():.2f}:{self.getMinuto():.2f}:{self.getSegundo():.2f}")
+        return (f"{self.getHora():02d}:{self.getMinuto():02d}:{self.getSegundo():02d}")
     
     def nextSecond(self):
-        if self.getSegundo() == 59:
-            self.setSegundo(0)
-            self.setMinuto(self.getMinuto() + 1)
-        else:
-            self.setSegundo(self.getSegundo() + 1)
-        
-        if self.getMinuto() == 59:
-            self.setMinuto(0)
-            self.setHora(self.getHora() + 1)
-        
-        if self.getHora() == 23:
-            self.setHora(0)
-            self.setSegundo(self.getSegundo() + 1)
+        self.__segundo += 1
+        if self.__segundo == 60:
+            self.__segundo = 0
+            self.__minuto == 1
+        if self.__minuto == 60:
+            self.__minuto = 0
+            self.__hora += 1
+        if self.__hora == 24:
+            self.__hora = 0
 
 def main():
     relogio = Watch()
@@ -62,15 +58,16 @@ def main():
 
         if args[0] == "end":
             break
-        elif args[0] == "set" or "init":
+        elif args[0] == "set" or args[0] == "init":
             valor = int(args[1])
-            valor2 = int(args[2])
-            valor3 = int(args[3])
+            valor_2 = int(args[2])
+            valor_3 = int(args[3])
             relogio.setHora(valor)
-            relogio.setMinuto(valor2)
-            relogio.setSegundo(valor3)
+            relogio.setMinuto(valor_2)
+            relogio.setSegundo(valor_3)
         elif args[0] == "show":
             print(relogio)
         elif args[0] == "next":
             relogio.nextSecond()
-main()    
+
+main()

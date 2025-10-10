@@ -44,3 +44,8 @@
 2025-10-09 14:20:22, EXEC, v:1, k:poo@roupa, mode:FULL, rate:100, size:37
 2025-10-09 14:21:20, MOVE, v:1, k:poo@roupa, mode:BACK
 2025-10-09 14:25:05, SELF, v:1, k:poo@roupa, rate:100, human:_, alone:10, study:30
+2025-10-09 14:26:25, MOVE, v:1, k:poo@relogio, mode:PICK
+2025-10-09 14:26:26, EXEC, v:1, k:poo@relogio, mode:FULL, rate:0
+2025-10-09 14:27:24, EXEC, v:1, k:poo@relogio, mode:FULL, rate:0, size:77
+2025-10-09 14:27:47, EXEC, v:1, k:poo@relogio, mode:FULL, rate:0, size:77
+2025-10-09 14:28:08, EXEC, v:1, k:poo@relogio, mode:FULL, rate:0, size:77

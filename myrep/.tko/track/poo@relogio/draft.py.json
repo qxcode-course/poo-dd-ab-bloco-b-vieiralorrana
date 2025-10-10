@@ -67,8 +67,53 @@
         },
         {
             "label": "2025-10-07_15-24-50",
-            "content": "class Watch:\n    def __init__(self):\n        self.__hora = 0\n        self.__minuto = 0\n        self.__segundo = 0\n\n    def getHora(self):\n        return self.__hora\n    \n    def getMinuto(self):\n        return self.__minuto \n    \n    def getSegundo(self):\n        return self.__segundo\n    \n    def setHora(self, valor: int):\n        if valor < 0 or valor > 23:\n            print(\"fail: hora invalida\") \n        else:\n            self.__hora = valor\n\n    def setMinuto(self, valor: int):\n        if valor < 0 or valor > 59:\n            print(\"fail: minuto inv\u00e1lido\") \n        else:\n            self.__minuto = valor\n\n    def setSegundo(self, valor: int):\n        if valor < 0 or valor > 59:\n            print(\"fail: segundo inv\u00e1lido\")\n        else:\n            self.__segundo = valor \n\n    def show(self) -> None:\n        print(self)\n\n    def __str__(self):\n        return (f\"{self.getHora():.2f}:{self.getMinuto():.2f}:{self.getSegundo():.2f}\")\n    \n    def nextSecond(self):\n        if self.getSegundo() == 59:\n            self.setSegundo(0)\n            self.setMinuto(self.getMinuto() + 1)\n        else:\n            self.setSegundo(self.getSegundo() + 1)\n        \n        if self.getMinuto() == 59:\n            self.setMinuto(0)\n            self.setHora(self.getHora() + 1)\n        \n        if self.getHora() == 23:\n            self.setHora(0)\n            self.setSegundo(self.getSegundo() + 1)\n\ndef main():\n    relogio = Watch()\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"set\" or \"init\":\n            valor = int(args[1])\n            valor2 = int(args[2])\n            valor3 = int(args[3])\n            relogio.setHora(valor)\n            relogio.setMinuto(valor2)\n            relogio.setSegundo(valor3)\n        elif args[0] == \"show\":\n            print(relogio)\n        elif args[0] == \"next\":\n            relogio.nextSecond()\nmain()    ",
+            "content": "@@ -1949,17 +1949,16 @@\n econd()%0A\n-%0A\n main()  \n",
             "lines": "76"
+        },
+        {
+            "label": "2025-10-09_14-27-24",
+            "content": "@@ -1654,32 +1654,33 @@\n            valor\n+2\n  = int(args%5B2%5D)%0A\n@@ -1688,32 +1688,33 @@\n            valor\n+3\n  = int(args%5B3%5D)%0A\n@@ -1779,24 +1779,25 @@\n Minuto(valor\n+2\n )%0A          \n@@ -1818,24 +1818,25 @@\n egundo(valor\n+3\n )%0A        el\n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-10-09_14-27-47",
+            "content": "@@ -1662,18 +1662,16 @@\n    valor\n-_2\n  = int(a\n@@ -1695,18 +1695,16 @@\n    valor\n-_3\n  = int(a\n@@ -1785,10 +1785,8 @@\n alor\n-_2\n )%0A  \n@@ -1823,10 +1823,8 @@\n alor\n-_3\n )%0A  \n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-10-09_14-28-07",
+            "content": "@@ -548,25 +548,25 @@\n : minuto inv\n-a\n+%C3%A1\n lido%22) %0A    \n@@ -720,17 +720,17 @@\n undo inv\n-a\n+%C3%A1\n lido%22)%0A \n@@ -1603,27 +1603,16 @@\n %22set%22 or\n- args%5B0%5D ==\n  %22init%22:\n@@ -1956,12 +1956,16 @@\n nd()%0A%0Amain()\n+    \n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-10-10_09-36-00",
+            "content": "@@ -885,19 +885,19 @@\n tHora():\n-02d\n+.2f\n %7D:%7Bself.\n@@ -908,19 +908,19 @@\n inuto():\n-02d\n+.2f\n %7D:%7Bself.\n@@ -936,11 +936,11 @@\n o():\n-02d\n+.2f\n %7D%22)%0A\n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-10-10_09-37-27",
+            "content": "@@ -982,27 +982,35 @@\n     \n+if \n self.\n-__s\n+getS\n egundo\n- += 1\n+() == 59:\n %0A   \n@@ -1018,32 +1018,30 @@\n     \n-if\n+   \n  self.\n-__s\n+setS\n egundo\n- == 60:\n+(0)\n %0A   \n@@ -1058,23 +1058,54 @@\n elf.\n-__segundo = 0%0A \n+setMinuto(self.getMinuto() + 1)%0A        else:%0A\n     \n@@ -1115,26 +1115,56 @@\n     \n+ \n self.\n-__minuto\n+setSegundo(self.getSegundo()\n  +\n-=\n  1\n+)%0A        \n %0A   \n@@ -1180,22 +1180,25 @@\n elf.\n-__m\n+getM\n inuto\n+()\n  == \n-60\n+59\n :%0A  \n@@ -1208,36 +1208,36 @@\n        self.\n-__m\n+setM\n inuto\n- = 0\n+(0)\n %0A           \n@@ -1246,19 +1246,44 @@\n elf.\n-__h\n+setHora(self.getH\n ora\n+()\n  +\n-=\n  1\n+)%0A        \n %0A   \n@@ -1299,20 +1299,23 @@\n elf.\n-__h\n+getH\n ora\n+()\n  == 2\n-4\n+3\n :%0A  \n@@ -1329,26 +1329,77 @@\n    self.\n-__hora = 0\n+setHora(0)%0A            self.setSegundo(self.getSegundo() + 1)\n %0A%0Adef ma\n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-10-10_09-44-31",
+            "content": "@@ -1024,17 +1024,17 @@\n segundo \n-%3E\n+=\n = 60:%0A  \n@@ -1118,17 +1118,17 @@\n _minuto \n-%3E\n+=\n = 60:%0A  \n@@ -1207,17 +1207,17 @@\n .__hora \n-%3E\n+=\n = 24:%0A  \n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-10-10_09-45-26",
+            "content": "@@ -401,36 +401,8 @@\n %22) %0A\n-            self.__hora = 0%0A\n     \n@@ -565,38 +565,8 @@\n %22) %0A\n-            self.__minuto = 0%0A\n     \n@@ -732,39 +732,8 @@\n o%22)%0A\n-            self.__segundo = 0%0A\n     \n@@ -1024,17 +1024,17 @@\n segundo \n-=\n+%3E\n = 60:%0A  \n@@ -1088,17 +1088,17 @@\n _minuto \n-=\n++\n = 1%0A    \n@@ -1118,17 +1118,17 @@\n _minuto \n-=\n+%3E\n = 60:%0A  \n@@ -1207,17 +1207,17 @@\n .__hora \n-=\n+%3E\n = 24:%0A  \n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-10-10_09-50-53",
+            "content": "@@ -393,24 +393,52 @@\n invalida%22) %0A\n+            self.__hora = 0%0A\n         else\n@@ -431,32 +431,32 @@\n 0%0A        else:%0A\n-\n             self\n@@ -585,24 +585,54 @@\n invalido%22) %0A\n+            self.__minuto = 0%0A\n         else\n@@ -734,32 +734,32 @@\n  or valor %3E 59:%0A\n-\n             prin\n@@ -786,16 +786,47 @@\n alido%22)%0A\n+            self.__segundo = 0%0A\n         \n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-10-10_09-51-32",
+            "content": "class Watch:\n    def __init__(self):\n        self.__hora = 0\n        self.__minuto = 0\n        self.__segundo = 0\n\n    def getHora(self):\n        return self.__hora\n    \n    def getMinuto(self):\n        return self.__minuto \n    \n    def getSegundo(self):\n        return self.__segundo\n    \n    def setHora(self, valor: int):\n        if valor < 0 or valor > 23:\n            print(\"fail: hora invalida\") \n        else:\n            self.__hora = valor\n\n    def setMinuto(self, valor: int):\n        if valor < 0 or valor > 59:\n            print(\"fail: minuto invalido\") \n        else:\n            self.__minuto = valor\n\n    def setSegundo(self, valor: int):\n        if valor < 0 or valor > 59:\n            print(\"fail: segundo invalido\")\n        else:\n            self.__segundo = valor \n\n    def show(self) -> None:\n        print(self)\n\n    def __str__(self):\n        return (f\"{self.getHora():02d}:{self.getMinuto():02d}:{self.getSegundo():02d}\")\n    \n    def nextSecond(self):\n        self.__segundo += 1\n        if self.__segundo == 60:\n            self.__segundo = 0\n            self.__minuto == 1\n        if self.__minuto == 60:\n            self.__minuto = 0\n            self.__hora += 1\n        if self.__hora == 24:\n            self.__hora = 0\n\ndef main():\n    relogio = Watch()\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"set\" or args[0] == \"init\":\n            valor = int(args[1])\n            valor_2 = int(args[2])\n            valor_3 = int(args[3])\n            relogio.setHora(valor)\n            relogio.setMinuto(valor_2)\n            relogio.setSegundo(valor_3)\n        elif args[0] == \"show\":\n            print(relogio)\n        elif args[0] == \"next\":\n            relogio.nextSecond()\n\nmain()",
+            "lines": "73"
         }
     ]
 }
