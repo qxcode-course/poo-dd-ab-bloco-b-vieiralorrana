@@ -15,7 +15,7 @@ class Watch:
     
     def setHora(self, valor: int):
         if valor < 0 or valor > 23:
-            print("fail: hora invalida") 
+            print("fail: hora invalida")
         else:
             self.__hora = valor
 
@@ -41,7 +41,7 @@ class Watch:
         self.__segundo += 1
         if self.__segundo == 60:
             self.__segundo = 0
-            self.__minuto == 1
+            self.__minuto += 1
         if self.__minuto == 60:
             self.__minuto = 0
             self.__hora += 1
@@ -58,7 +58,15 @@ def main():
 
         if args[0] == "end":
             break
-        elif args[0] == "set" or args[0] == "init":
+        elif args[0] == "set":
+            valor = int(args[1])
+            valor_2 = int(args[2])
+            valor_3 = int(args[3])
+            relogio.setHora(valor)
+            relogio.setMinuto(valor_2)
+            relogio.setSegundo(valor_3)
+        elif args[0] == "init":
+            relogio = Watch()
             valor = int(args[1])
             valor_2 = int(args[2])
             valor_3 = int(args[3])
