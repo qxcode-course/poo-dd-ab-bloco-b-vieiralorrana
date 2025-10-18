@@ -8,7 +8,7 @@ sources:
 - database: poo
   link: https://github.com/qxcodepoo/arcade/blob/master/Readme.md
   cache_path: C:\Users\lorra\Documents\poo_tarefas\poo-dd-ab-bloco-b-vieiralorrana\myrep\.tko\cache\poo.md
-  cache_timestamp: '2025-10-14 13:30:43'
+  cache_timestamp: '2025-10-18 17:57:19'
   filters:
   - acesso
   - simples

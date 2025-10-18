@@ -32,3 +32,4 @@
 2025-10-14 14:23:56, EXEC, v:1, k:poo@relogio, mode:FULL, rate:92, size:81
 2025-10-14 14:27:50, MOVE, v:1, k:poo@relogio, mode:BACK
 2025-10-14 14:28:01, MOVE, v:1, k:poo@motoca, mode:DOWN
+2025-10-14 14:53:25, MOVE, v:1, k:poo@notebook, mode:DOWN

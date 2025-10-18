@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-18_17-57-28",
+            "content": "@@ -326,89 +326,8 @@\n lue \n-%0A    %0A    def __str__(self):%0A        return f%22%7Bself.setNome()%7D:%7Bself.setIdade()%7D%22\n %0A%0A  \n@@ -482,23 +482,25 @@\n def getP\n-otencia\n+assageiro\n (self):%0A\n@@ -526,143 +526,464 @@\n .__p\n-otencia%0A%0A    def getPassageiro(self):%0A        return self.__passageiro%0A%0A    def getTempo(self):%0A        return self.__tempo %0A    %0A%0Ajose\n+assageiro%0A    %0A    def setPassageiro(self, nome: str, idade: int):%0A        if self.__passageiro != None:%0A            print(%22fail: moto ocupada%22)%0A        else:%0A            self.__passageiro = Pessoa(nome, idade)%0A    %0A    def getPotencia(self):%0A        return self.__potencia%0A    %0A    def setPotencia(self, value):%0A        self.__potencia = value%0A%0A    def getTempo(self):%0A        return self.__tempo%0A%0A    def setTempo(self):%0A        print(%22a%22)%0A    %0Acliente_1\n  = P\n@@ -1000,19 +1000,27 @@\n %C3%A9%22, \n-25)\n+17) \n %0Aprint(\n-jose)\n+cliente_1)%0A%0A\n",
+            "lines": "48"
+        },
+        {
+            "label": "2025-10-18_18-10-26",
+            "content": "@@ -332,61 +332,8 @@\n    %0A\n-    def show(self) -%3E None:%0A        print(self)%0A    %0A\n     \n@@ -405,16 +405,21 @@\n de()%7D%22%0A%0A\n+    %0A\n class Mo\n@@ -735,254 +735,42 @@\n    %0A\n-    def inserir(self, passageiro: Pessoa) -%3E bool:%0A        if self.__passageiro != None:%0A            print(%22fail: busy motorcycle%22)%0A            return False%0A        else:%0A            self.__passageiro = passageiro%0A            return True %0A    %0A    %0A%0A\n+%0Ajose = Pessoa(%22jos%C3%A9%22, 25)%0Aprint(jose)\n",
+            "lines": "39"
+        },
+        {
+            "label": "2025-10-18_18-23-40",
+            "content": "@@ -1031,645 +1031,6 @@\n     \n-def show(self) -%3E None:%0A        print(self)%0A    %0A    def __str__(self):%0A        return f%22power:%7Bself.getPotencia()%7D, time:%7Bself.getTempo()%7D, person:%7Bself.getPassageiro()%7D%22%0A    %0A%0Adef main():%0A    pessoa = Pessoa() %0A    motoca = Moto()%0A%0A    while True:%0A        line = input()%0A        print(%22$%22 + line)%0A        args = line.split(%22 %22)%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A        elif args%5B0%5D == %22init%22:%0A            tempo = args%5B1%5D%0A            motoca(tempo) %0A        elif args%5B0%5D == %22enter%22:%0A            nome = args%5B1%5D%0A            idade = args%5B2%5D%0A            pessoa = Pessoa(nome, idade)%0A            motoca.inserir(pessoa)%0A%0A%0A%0A%0Amain()\n %0A%0A\n",
+            "lines": "48"
+        },
+        {
+            "label": "2025-10-18_18-39-30",
+            "content": "@@ -1409,66 +1409,8 @@\n eak%0A\n-        elif args%5B0%5D == %22show%22:%0A            print(motoca)%0A\n     \n@@ -1657,16 +1657,19 @@\n essoa)%0A%0A\n+%0A%0A%0A\n main()%0A%0A\n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-10-18_18-40-31",
+            "content": "class Pessoa:\n    def __init__(self):\n        self.__nome: str = \"\"\n        self.__idade: int \n\n    def getNome(self):\n        return self.__nome\n    \n    def setNome(self, value):\n        self.__nome = value \n\n    def getIdade(self):\n        return self.__idade \n    \n    def setIdade(self, value):\n        self.__idade = value \n    \n    def show(self) -> None:\n        print(self)\n    \n    def __str__(self):\n        return f\"{self.setNome()}:{self.setIdade()}\"\n\nclass Moto:\n    def __init__(self):\n        self.__potencia: int = 1\n        self.__passageiro: Pessoa | None\n        self.__tempo: int = 0\n\n    def getPotencia(self):\n        return self.__potencia\n\n    def getPassageiro(self):\n        return self.__passageiro\n\n    def getTempo(self):\n        return self.__tempo \n    \n    def inserir(self, passageiro: Pessoa) -> bool:\n        if self.__passageiro != None:\n            print(\"fail: busy motorcycle\")\n            return False\n        else:\n            self.__passageiro = passageiro\n            return True \n    \n    def show(self) -> None:\n        print(self)\n    \n    def __str__(self):\n        return f\"power:{self.getPotencia()}, time:{self.getTempo()}, person:{self.getPassageiro()}\"\n    \n\ndef main():\n    pessoa = Pessoa() \n    motoca = Moto()\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"show\":\n            print(motoca)\n        elif args[0] == \"init\":\n            tempo = args[1]\n            motoca(tempo) \n        elif args[0] == \"enter\":\n            nome = args[1]\n            idade = args[2]\n            pessoa = Pessoa(nome, idade)\n            motoca.inserir(pessoa)\n\nmain()\n\n",
+            "lines": "77"
+        }
+    ]
+}
