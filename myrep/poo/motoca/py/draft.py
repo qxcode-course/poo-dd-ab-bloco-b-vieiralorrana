@@ -1,7 +1,7 @@
 class Pessoa:
-    def __init__(self):
-        self.__nome: str = ""
-        self.__idade: int 
+    def __init__(self, nome: str, idade: int):
+        self.__nome: str = nome
+        self.__idade: int = idade
 
     def getNome(self):
         return self.__nome
@@ -19,12 +19,12 @@ class Pessoa:
         print(self)
     
     def __str__(self):
-        return f"{self.setNome()}:{self.setIdade()}"
+        return f"{self.getNome()}:{self.getIdade()}"
 
 class Moto:
-    def __init__(self):
+    def __init__(self, potencia: int):
         self.__potencia: int = 1
-        self.__passageiro: Pessoa | None
+        self.__passageiro: Pessoa | None = None
         self.__tempo: int = 0
 
     def getPotencia(self):
@@ -42,36 +42,70 @@ class Moto:
             return False
         else:
             self.__passageiro = passageiro
-            return True 
+            return True
+    
+    def buy(self, min: int):
+        self.__tempo += min 
+    
+    def honk(self): 
+        return "P" + "e" * self.__potencia + "m"
+    
+    def drive(self, min: int):
+        if self.__tempo <= 0:
+            print("fail: buy time first")
+            return
+        if self.__passageiro == None:
+            print("fail: empty motorcycle")
+            return
+        if self.__passageiro.getIdade() > 10:
+            print("fail: too old to drive")
+            return 
+        if min > self.__tempo:
+            print(f"fail: time finished after {self.__tempo} minutes")
+            return
+        
+        self.__tempo -= min
+    
+    def remover(self) -> None:
+        backup = self.__passageiro
+        self.__passageiro = None
+        return backup
     
     def show(self) -> None:
         print(self)
     
     def __str__(self):
-        return f"power:{self.getPotencia()}, time:{self.getTempo()}, person:{self.getPassageiro()}"
-    
+        passageiro = f"({self.__passageiro})" if self.__passageiro != None else "(empty)"
+        return f"power:{self.getPotencia()}, time:{self.getTempo()}, person:{passageiro}"
 
 def main():
-    pessoa = Pessoa() 
-    motoca = Moto()
+    motoca = Moto(1)
 
     while True:
-        line = input()
+        line = input() 
         print("$" + line)
         args = line.split(" ")
 
         if args[0] == "end":
             break
-        elif args[0] == "show":
+        if args[0] == "init":
+            potencia = int(args[1]) 
+            motoca = Moto(potencia)
+        elif args[0] == "show": 
             print(motoca)
-        elif args[0] == "init":
-            tempo = args[1]
-            motoca(tempo) 
         elif args[0] == "enter":
             nome = args[1]
-            idade = args[2]
+            idade = int(args[2])
             pessoa = Pessoa(nome, idade)
             motoca.inserir(pessoa)
-            
+        elif args[0] == "leave":
+            motoca.remover()
+        elif args[0] == "buy":
+            min = int(args[1])
+            motoca.buy(min)
+        elif args[0] == "drive":
+            min = int(args[1])
+            motoca.drive(min)
+        elif args[0] == "honk":
+            motoca.honk()
 main()
-
