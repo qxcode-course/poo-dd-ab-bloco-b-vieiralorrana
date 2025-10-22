@@ -23,7 +23,7 @@ class Pessoa:
 
 class Moto:
     def __init__(self, potencia: int):
-        self.__potencia: int = 1
+        self.__potencia: int = potencia
         self.__passageiro: Pessoa | None = None
         self.__tempo: int = 0
 
@@ -62,14 +62,18 @@ class Moto:
             return 
         if min > self.__tempo:
             print(f"fail: time finished after {self.__tempo} minutes")
+            self.__tempo = 0
             return
         
         self.__tempo -= min
     
-    def remover(self) -> None:
-        backup = self.__passageiro
+    def remover(self) -> Pessoa | None:
+        if self.__passageiro == None:
+            print("fail: empty motorcycle")
+            return None
+        aux = self.__passageiro
         self.__passageiro = None
-        return backup
+        return aux
     
     def show(self) -> None:
         print(self)
@@ -99,7 +103,9 @@ def main():
             pessoa = Pessoa(nome, idade)
             motoca.inserir(pessoa)
         elif args[0] == "leave":
-            motoca.remover()
+            pessoa = motoca.remover()
+            if pessoa != None:
+                print(pessoa)
         elif args[0] == "buy":
             min = int(args[1])
             motoca.buy(min)
@@ -107,5 +113,5 @@ def main():
             min = int(args[1])
             motoca.drive(min)
         elif args[0] == "honk":
-            motoca.honk()
+            print(motoca.honk())
 main()
