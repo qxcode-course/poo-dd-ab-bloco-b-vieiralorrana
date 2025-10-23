@@ -13,6 +13,9 @@ class Grafite:
     def getSize(self):
         return self.__size 
     
+    def setSize(self, valor: int):
+        self.__size += valor
+    
     def usagePerSheet(self):
         if self.__hardness == "HB":
             return 1
@@ -69,12 +72,15 @@ class Lapiseira:
             return
         
         uso = self.__grafite.usagePerSheet()
-        mm_usavel = self.__grafite.getSize() - 10
-        maxFolhas = mm_usavel // uso 
+        tamanhoFinal = self.__grafite.getSize() - uso 
 
-        if maxFolhas <= 0:
+        if tamanhoFinal < 10:
+            self.__grafite.setSize(10)
             print("fail: folha incompleta")
             return
+        
+        self.__grafite.setSize(tamanhoFinal)
+        
         
     def __str__(self):
         grafite = f"[{self.__grafite}]" if self.__grafite != None else "null"

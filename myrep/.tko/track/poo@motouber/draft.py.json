@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-23_11-09-29",
+            "content": "@@ -2367,27 +2367,28 @@\n : %7Bself.\n-__m\n+getM\n otorista\n %7D, Passe\n@@ -2379,16 +2379,18 @@\n otorista\n+()\n %7D, Passe\n@@ -2397,27 +2397,28 @@\n nger: %7Bself.\n-__p\n+getP\n assageiro%7D%22%0A\n@@ -2410,24 +2410,26 @@\n etPassageiro\n+()\n %7D%22%0A    %0A%0Adef\n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-23_11-14-52",
+            "content": "@@ -2734,24 +2734,21 @@\n         \n-dinheiro\n+idade\n  = int(a\n@@ -2792,24 +2792,21 @@\n a(nome, \n-dinheiro\n+idade\n )%0A      \n@@ -2897,17 +2897,16 @@\n     nome\n-p\n  = args%5B\n@@ -2920,25 +2920,21 @@\n         \n-dinheirop\n+idade\n  = int(a\n@@ -2981,20 +2981,15 @@\n nome\n-p\n , \n-dinheirop\n+idade\n )%0A  \n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-23_11-20-38",
+            "content": "@@ -583,18 +583,16 @@\n .getNome\n-()\n %7D:%7Bself.\n@@ -602,18 +602,16 @@\n Dinheiro\n-()\n %7D%22%0A    %0A\n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-23_11-23-42",
+            "content": "@@ -1931,56 +1931,8 @@\n ())%0A\n-            self.getPassageiro().getDinheiro(0)%0A\n     \n",
+            "lines": "111"
+        },
+        {
+            "label": "2025-10-23_11-25-39",
+            "content": "@@ -1960,17 +1960,17 @@\n geiro().\n-s\n+g\n etDinhei\n",
+            "lines": "112"
+        },
+        {
+            "label": "2025-10-23_11-26-28",
+            "content": "class Pessoa:\n    def __init__(self, nome: str, dinheiro: int):\n        self.__nome = nome\n        self.__dinheiro = dinheiro \n\n    def getNome(self):\n        return self.__nome\n    \n    def getDinheiro(self):\n        return self.__dinheiro\n    \n    def setNome(self, nome: str):\n        self.__nome = nome\n    \n    def setDinheiro(self, dinheiro: int):\n        self.__dinheiro = dinheiro \n\n    def pagar(self, valor: int):\n        self.__dinheiro -= valor \n    \n    def receber(self, valor: int):\n        self.__dinheiro += valor \n    \n    def __str__(self):\n        return f\"{self.getNome()}:{self.getDinheiro()}\"\n    \nclass Moto:\n    def __init__(self):\n        self.__motorista: Pessoa | None = None\n        self.__passageiro: Pessoa | None = None\n        self.__custo: int = 0\n\n    def getMotorista(self):\n        return self.__motorista \n    \n    def getPassageiro(self):\n        return self.__passageiro\n    \n    def getCusto(self):\n        return self.__custo \n    \n    def subirMotorista(self, motorista: Pessoa):\n        if self.__motorista != None:\n            print(\"fail: ja tem motorista na moto\")\n        else:\n            self.__motorista = motorista \n\n    def subirPassageiro(self, passageiro: Pessoa):\n        if self.__passageiro != None:\n            print(\"fail: ja tem passageiro na moto\")\n        else:\n            self.__passageiro = passageiro\n        \n    def rodando(self, km: int):\n        if self.getMotorista() == None:\n            print(\"fail: nao ha motorista na moto\")\n            return\n        if self.getPassageiro() == None:\n            print(\"fail: nao ha passageiro na moto\")\n            return\n        \n        self.__custo += km\n\n    def saltar(self):\n        if self.getPassageiro().getDinheiro() < self.getCusto():\n            print(\"fail: Passenger does not have enough money\")\n            self.getPassageiro().pagar(self.getCusto())\n            self.getMotorista().receber(self.getCusto())\n            self.getPassageiro().setDinheiro(0)\n            print(f\"{self.getPassageiro()} left\")\n            self.__passageiro = None\n            self.__custo = 0\n        else:\n            self.getPassageiro().pagar(self.getCusto())\n            self.getMotorista().receber(self.getCusto())\n            print(f\"{self.getPassageiro()} left\")\n            self.__passageiro = None\n            self.__custo = 0\n\n    \n    def __str__(self):\n        return f\"Cost: {self.getCusto()}, Driver: {self.__motorista}, Passenger: {self.__passageiro}\"\n    \n\ndef main():\n    motouber = Moto()\n\n    while True:\n        line = input()\n        print(\"$\" + line)\n        args = line.split(\" \")\n\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"show\":\n            print(motouber)\n        elif args[0] == \"setDriver\":\n            nome = args[1]\n            dinheiro = int(args[2])\n            motorista = Pessoa(nome, dinheiro)\n            motouber.subirMotorista(motorista)\n        elif args[0] == \"setPass\":\n            nomep = args[1]\n            dinheirop = int(args[2])\n            passageiro = Pessoa(nomep, dinheirop)\n            motouber.subirPassageiro(passageiro)\n        elif args[0] == \"leavePass\":\n            motouber.saltar()\n        elif args[0] == \"drive\":\n            km = int(args[1])\n            motouber.rodando(km)\nmain()\n",
+            "lines": "112"
+        }
+    ]
+}
